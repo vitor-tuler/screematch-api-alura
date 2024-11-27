@@ -15,6 +15,6 @@ public class ScreematchApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Principal principal = new Principal();
-		principal.exibiMenu();
+		principal.exibeMenu();
 	}
 }
