@@ -1,26 +1,29 @@
-package br.com.alura.screematch.model;
+package br.com.alura.screenmatch.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 public class Episodio {
     private Integer temporada;
     private String titulo;
-    private Integer numero;
+    private Integer numeroEpisodio;
     private Double avaliacao;
     private LocalDate dataLancamento;
 
     public Episodio(Integer numeroTemporada, DadosEpisodio dadosEpisodio) {
         this.temporada = numeroTemporada;
         this.titulo = dadosEpisodio.titulo();
-        this.numero = dadosEpisodio.numero();
+        this.numeroEpisodio = dadosEpisodio.numero();
+
         try {
             this.avaliacao = Double.valueOf(dadosEpisodio.avaliacao());
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException ex) {
             this.avaliacao = 0.0;
         }
+
         try {
             this.dataLancamento = LocalDate.parse(dadosEpisodio.dataLancamento());
-        } catch (Exception e) {
+        } catch (DateTimeParseException ex) {
             this.dataLancamento = null;
         }
     }
@@ -41,12 +44,12 @@ public class Episodio {
         this.titulo = titulo;
     }
 
-    public Integer getNumero() {
-        return numero;
+    public Integer getNumeroEpisodio() {
+        return numeroEpisodio;
     }
 
-    public void setNumero(Integer numero) {
-        this.numero = numero;
+    public void setNumeroEpisodio(Integer numeroEpisodio) {
+        this.numeroEpisodio = numeroEpisodio;
     }
 
     public Double getAvaliacao() {
@@ -69,7 +72,7 @@ public class Episodio {
     public String toString() {
         return "temporada=" + temporada +
                 ", titulo='" + titulo + '\'' +
-                ", numero=" + numero +
+                ", numeroEpisodio=" + numeroEpisodio +
                 ", avaliacao=" + avaliacao +
                 ", dataLancamento=" + dataLancamento ;
     }

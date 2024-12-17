@@ -1,15 +1,15 @@
-package br.com.alura.screematch;
+package br.com.alura.screenmatch;
 
-import br.com.alura.screematch.principal.Principal;
+import br.com.alura.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScreematchApplication implements CommandLineRunner {
+public class ScreenmatchApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScreematchApplication.class, args);
+		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
 	@Override
