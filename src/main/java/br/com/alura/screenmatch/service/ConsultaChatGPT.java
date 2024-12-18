@@ -8,7 +8,7 @@ public class ConsultaChatGPT {
         OpenAiService service = new OpenAiService(System.getenv("OPENAI_API_KEY"));
 
         CompletionRequest requisicao = CompletionRequest.builder()
-                .model("gpt-4o-mini-2024-07-18")
+                .model("gpt-4o-mini")
                 .prompt("traduza para o português o texto: " + texto)
                 .maxTokens(1000)
                 .temperature(0.7)
